@@ -10,24 +10,42 @@ const QuoteForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStep, setFormStep] = useState(1);
   
+  // Add state for form values
+  const [formValues, setFormValues] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    postcode: "",
+    propertyType: "",
+    currentHeating: ""
+  });
+  
+  // Handle input changes
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setFormValues(prev => ({ ...prev, [id]: value }));
+  };
+  
+  // Handle select changes
+  const handlePropertyTypeChange = (value: string) => {
+    setFormValues(prev => ({ ...prev, propertyType: value }));
+  };
+  
+  const handleHeatingTypeChange = (value: string) => {
+    setFormValues(prev => ({ ...prev, currentHeating: value }));
+  };
+  
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
   
-    const formData = {
-      name: (document.getElementById("name") as HTMLInputElement)?.value,
-      email: (document.getElementById("email") as HTMLInputElement)?.value,
-      phone: (document.getElementById("phone") as HTMLInputElement)?.value,
-      postcode: (document.getElementById("postcode") as HTMLInputElement)?.value,
-      propertyType: (document.getElementById("property-type") as HTMLInputElement)?.value,
-      currentHeating: (document.getElementById("current-heating") as HTMLInputElement)?.value,
-    };
-  
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbx2f4C-UOnLnUEx9UziBgyNh44HBkkgzCAWzF980bj4us6WzWgpuXvSr_3XeZEo8lDQFA/exec", {
+      // Use the form values from state instead of getElementById
+      const response = await fetch("https://script.google.com/macros/s/AKfycbx2f4C-UOnLnUEx9UziBgyNh44HBkkgzCAWzF980bj4us6WzWgpuXvSr_3XeZEo8lDQFA/exec", {
         method: "POST",
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formValues),
         headers: { "Content-Type": "application/json" },
+        mode: "no-cors" // This is often needed for Google Apps Script
       });
   
       setFormStep(2);
@@ -53,28 +71,58 @@ const QuoteForm = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
             <Label htmlFor="name">Full Name</Label>
-            <Input id="name" placeholder="John Smith" required />
+            <Input 
+              id="name" 
+              placeholder="John Smith" 
+              required 
+              value={formValues.name}
+              onChange={handleInputChange}
+            />
           </div>
           
           <div className="space-y-2">
             <Label htmlFor="email">Email Address</Label>
-            <Input id="email" type="email" placeholder="john@example.com" required />
+            <Input 
+              id="email" 
+              type="email" 
+              placeholder="john@example.com" 
+              required 
+              value={formValues.email}
+              onChange={handleInputChange}
+            />
           </div>
           
           <div className="space-y-2">
             <Label htmlFor="phone">Phone Number</Label>
-            <Input id="phone" type="tel" placeholder="07123456789" required />
+            <Input 
+              id="phone" 
+              type="tel" 
+              placeholder="07123456789" 
+              required 
+              value={formValues.phone}
+              onChange={handleInputChange}
+            />
           </div>
           
           <div className="space-y-2">
             <Label htmlFor="postcode">Postcode</Label>
-            <Input id="postcode" placeholder="SW1A 1AA" required />
+            <Input 
+              id="postcode" 
+              placeholder="SW1A 1AA" 
+              required 
+              value={formValues.postcode}
+              onChange={handleInputChange}
+            />
           </div>
           
           <div className="space-y-2">
             <Label htmlFor="property-type">Property Type</Label>
-            <Select id="property-type" required>
-              <SelectTrigger>
+            <Select 
+              value={formValues.propertyType}
+              onValueChange={handlePropertyTypeChange}
+              required
+            >
+              <SelectTrigger id="property-type">
                 <SelectValue placeholder="Select property type" />
               </SelectTrigger>
               <SelectContent>
@@ -90,8 +138,12 @@ const QuoteForm = () => {
           
           <div className="space-y-2">
             <Label htmlFor="current-heating">Current Heating System</Label>
-            <Select id="current-heating" required>
-              <SelectTrigger>
+            <Select 
+              value={formValues.currentHeating}
+              onValueChange={handleHeatingTypeChange}
+              required
+            >
+              <SelectTrigger id="current-heating">
                 <SelectValue placeholder="Select current heating" />
               </SelectTrigger>
               <SelectContent>
