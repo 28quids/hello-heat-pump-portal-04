@@ -41,7 +41,7 @@ const QuoteForm = () => {
   
     try {
       // Use the form values from state instead of getElementById
-      const response = await fetch("https://script.google.com/macros/s/AKfycbx2f4C-UOnLnUEx9UziBgyNh44HBkkgzCAWzF980bj4us6WzWgpuXvSr_3XeZEo8lDQFA/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbzdzjm309WtZHwrcyOsR2q9zVSXmcP-jb76FDDQ60LR3-Va0obn5erEGLSp1NNncIwiew/exec", {
         method: "POST",
         body: JSON.stringify(formValues),
         headers: { "Content-Type": "application/json" },
