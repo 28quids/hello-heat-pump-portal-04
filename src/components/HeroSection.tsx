@@ -28,7 +28,7 @@ const HeroSection: FC = () => {
           </div>
           
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 animate-fade-in">
-            Find The Perfect Heat Pump Installer For Your Home
+            Hi Holly
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in-up">
