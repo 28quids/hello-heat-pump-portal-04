@@ -40,6 +40,13 @@ const Index = () => {
     };
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
       {/* Hero Section with Form */}
@@ -47,6 +54,19 @@ const Index = () => {
 
       {/* Myths vs Reality Section */}
       <MythsVsReality />
+      
+      {/* CTA after Myths vs Reality */}
+      <div className="py-10 bg-heat-50">
+        <div className="section-container text-center">
+          <h3 className="text-xl md:text-2xl font-semibold mb-4">Ready to find your perfect installer?</h3>
+          <CTAButton 
+            onClick={scrollToTop}
+            className="bg-heat-600 text-white hover:bg-heat-700"
+          >
+            Get Your Free Quotes Now
+          </CTAButton>
+        </div>
+      </div>
 
       {/* Testimonials Section - Simplified */}
       <section id="testimonials" className="section-container bg-heat-100">
@@ -82,8 +102,35 @@ const Index = () => {
         </div>
       </section>
 
+      {/* CTA after Testimonials */}
+      <div className="py-10 bg-heat-50">
+        <div className="section-container text-center">
+          <h3 className="text-xl md:text-2xl font-semibold mb-4">Join these satisfied homeowners today</h3>
+          <CTAButton 
+            onClick={scrollToTop}
+            className="bg-heat-600 text-white hover:bg-heat-700"
+          >
+            Get Free Heat Pump Quotes
+          </CTAButton>
+        </div>
+      </div>
+
       {/* FAQ Section - Keep this as it's valuable */}
       <FAQSection />
+
+      {/* CTA after FAQ Section */}
+      <div className="py-10 bg-heat-50">
+        <div className="section-container text-center">
+          <h3 className="text-xl md:text-2xl font-semibold mb-4">Got more questions?</h3>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">Our installer network can answer all your questions and provide personalized advice for your home.</p>
+          <CTAButton 
+            onClick={scrollToTop}
+            className="bg-heat-600 text-white hover:bg-heat-700"
+          >
+            Connect With Installers Now
+          </CTAButton>
+        </div>
+      </div>
 
       {/* Final CTA Section */}
       <section className="section-container bg-heat-600 text-white">
@@ -92,15 +139,9 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Find Your Perfect Heat Pump Installer?</h2>
             <p className="text-xl mb-8 text-heat-100">Get your free quotes today and join thousands of satisfied homeowners.</p>
             <CTAButton 
-              href="#"
+              onClick={scrollToTop}
               size="lg"
               className="bg-white text-heat-700 hover:bg-heat-100"
-              onClick={() => {
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth'
-                });
-              }}
             >
               Get Free Quotes Now
             </CTAButton>
