@@ -1,31 +1,14 @@
-
 import React, { useEffect } from 'react';
 import HeroSection from '@/components/HeroSection';
 import SectionTitle from '@/components/SectionTitle';
 import CTAButton from '@/components/CTAButton';
 import TestimonialCard from '@/components/TestimonialCard';
-import QuoteForm from '@/components/QuoteForm';
-import ProblemCard from '@/components/ProblemCard';
-import BenefitCard from '@/components/BenefitCard';
 import FAQSection from '@/components/FAQSection';
+import MythsVsReality from '@/components/MythsVsReality';
 import { 
-  ArrowUpRight, 
-  ThermometerSnowflake, 
-  Banknote, 
-  Leaf, 
-  HomeIcon, 
-  Clock4, 
-  BarChart, 
-  CheckCircle2, 
-  ThumbsUp,
-  Zap,
-  Calendar,
-  HeartHandshake,
-  Settings,
-  Users,
   Shield,
-  Sparkles,
-  HandCoins
+  CheckCircle2, 
+  ThumbsUp
 } from 'lucide-react';
 
 const Index = () => {
@@ -59,214 +42,22 @@ const Index = () => {
 
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
-      {/* Hero Section */}
+      {/* Hero Section with Form */}
       <HeroSection />
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className="section-container bg-white">
-        <div className="fade-in-section">
-          <SectionTitle 
-            preTitle="Easy Process"
-            title="How Our Service Works"
-            description="We make it simple to find and compare quotes from trusted heat pump installers in your area."
-          />
-          
-          <div className="relative max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-medium">
-            <div className="absolute inset-0 bg-heat-800 flex items-center justify-center">
-              {/* This would be a video in production */}
-              <div className="text-white text-center p-8">
-                <Zap className="w-16 h-16 mx-auto mb-4 animate-pulse-soft" />
-                <h3 className="text-2xl font-semibold mb-2">Video Placeholder</h3>
-                <p className="text-heat-300">A video explaining how our matching service connects you with the best local installers would appear here.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-16 grid md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-heat-100 text-heat-600 rounded-full flex items-center justify-center mb-4">
-                <span className="font-semibold">1</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Complete Our Form</h3>
-              <p className="text-muted-foreground">Fill out our simple form with your details and requirements to get started.</p>
-            </div>
-            
-            <div className="flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-heat-100 text-heat-600 rounded-full flex items-center justify-center mb-4">
-                <span className="font-semibold">2</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Get Matched</h3>
-              <p className="text-muted-foreground">We match you with up to 3 certified installers in your area who can meet your needs.</p>
-            </div>
-            
-            <div className="flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-heat-100 text-heat-600 rounded-full flex items-center justify-center mb-4">
-                <span className="font-semibold">3</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Compare & Choose</h3>
-              <p className="text-muted-foreground">Receive competitive quotes and choose the installer and system that's right for you.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Myths vs Reality Section */}
+      <MythsVsReality />
 
-      {/* Problem Section */}
-      <section id="problems" className="section-container bg-heat-100">
-        <div className="fade-in-section">
-          <SectionTitle 
-            preTitle="Why Change?"
-            title="The Problem With Traditional Heating"
-            description="Traditional heating systems are becoming increasingly problematic for homeowners and the environment."
-          />
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            <ProblemCard 
-              icon={<ThermometerSnowflake className="h-10 w-10" />}
-              title="Rising Energy Costs"
-              description="Traditional gas and oil heating systems are becoming increasingly expensive to run, with energy prices reaching record highs."
-            />
-            
-            <ProblemCard 
-              icon={<Leaf className="h-10 w-10" />}
-              title="Environmental Impact"
-              description="Conventional heating is a major contributor to carbon emissions and climate change, with significant environmental consequences."
-            />
-            
-            <ProblemCard 
-              icon={<Banknote className="h-10 w-10" />}
-              title="Inefficient Performance"
-              description="Older heating systems waste energy, resulting in higher bills and inconsistent heating throughout your home."
-            />
-          </div>
-          
-          <div className="mt-12 text-center">
-            <CTAButton href="#quote-form">
-              Find Installers Today
-            </CTAButton>
-          </div>
-        </div>
-      </section>
-
-      {/* Solution/Benefits Section */}
-      <section id="benefits" className="section-container">
-        <div className="fade-in-section">
-          <SectionTitle 
-            preTitle="The Future of Home Heating"
-            title="Why Choose Air Source Heat Pumps?"
-            description="Modern, efficient, and environmentally friendly heating that transforms how you heat your home."
-          />
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            <BenefitCard 
-              icon={<Banknote className="h-10 w-10" />}
-              title="Lower Energy Bills"
-              description="Reduce your heating costs by up to 50% compared to traditional gas or oil systems with higher efficiency technology."
-            />
-            
-            <BenefitCard 
-              icon={<Leaf className="h-10 w-10" />}
-              title="Eco-Friendly"
-              description="Cut your carbon footprint by up to 70% by switching to a renewable heating source that produces fewer emissions."
-            />
-            
-            <BenefitCard 
-              icon={<HomeIcon className="h-10 w-10" />}
-              title="Enhanced Comfort"
-              description="Enjoy consistent temperatures throughout your home with smart temperature control and efficient heat distribution."
-            />
-            
-            <BenefitCard 
-              icon={<Calendar className="h-10 w-10" />}
-              title="Long Lifespan"
-              description="Heat pumps typically last 15-20 years, much longer than conventional boilers, providing better long-term value."
-            />
-            
-            <BenefitCard 
-              icon={<Settings className="h-10 w-10" />}
-              title="Low Maintenance"
-              description="Requires minimal maintenance with fewer moving parts than combustion-based systems, reducing lifetime costs."
-            />
-            
-            <BenefitCard 
-              icon={<HeartHandshake className="h-10 w-10" />}
-              title="Government Incentives"
-              description="Take advantage of available grants and incentives designed to make green heating more affordable."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section id="why-us" className="section-container bg-heat-100">
-        <div className="fade-in-section">
-          <SectionTitle 
-            preTitle="Why Use Our Service"
-            title="The Benefits of Using Our Matching Service"
-            description="We connect you with the right installers to ensure you get the best heat pump solution for your home."
-          />
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            <BenefitCard 
-              icon={<Users className="h-10 w-10" />}
-              title="Vetted Installers"
-              description="We only work with MCS-certified installers who meet our high standards for quality and service."
-              className="bg-white"
-            />
-            
-            <BenefitCard 
-              icon={<Shield className="h-10 w-10" />}
-              title="No Obligation"
-              description="Receive and compare quotes with no pressure - you're free to choose the installer that best meets your needs."
-              className="bg-white"
-            />
-            
-            <BenefitCard 
-              icon={<Sparkles className="h-10 w-10" />}
-              title="100% Free Service"
-              description="Our matching service is completely free to use - you only pay the installer if you decide to proceed."
-              className="bg-white"
-            />
-            
-            <BenefitCard 
-              icon={<HandCoins className="h-10 w-10" />}
-              title="Competitive Quotes"
-              description="Get multiple quotes to compare, helping you find the best value for your heat pump installation."
-              className="bg-white"
-            />
-            
-            <BenefitCard 
-              icon={<Clock4 className="h-10 w-10" />}
-              title="Save Time"
-              description="No need to research and contact multiple companies - we do the legwork for you."
-              className="bg-white"
-            />
-            
-            <BenefitCard 
-              icon={<BarChart className="h-10 w-10" />}
-              title="Expert Advice"
-              description="Installers will provide tailored recommendations based on your home's specific requirements."
-              className="bg-white"
-            />
-          </div>
-          
-          <div className="mt-12 text-center">
-            <CTAButton href="#quote-form">
-              Get Free Installer Quotes
-            </CTAButton>
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof Section */}
-      <section id="testimonials" className="section-container">
+      {/* Testimonials Section - Simplified */}
+      <section id="testimonials" className="section-container bg-heat-100">
         <div className="fade-in-section">
           <SectionTitle 
             preTitle="Success Stories"
             title="What Our Users Say"
-            description="Don't just take our word for it. Hear from homeowners who found their perfect installer through our service."
+            description="Hear from homeowners who found their perfect installer through our service."
           />
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             <TestimonialCard 
               quote="The process was so simple. I filled out the form and within 24 hours I had quotes from three reputable installers. I was able to compare and choose the best one for my needs."
               author="Sarah Johnson"
@@ -288,87 +79,28 @@ const Index = () => {
               company="Edinburgh"
             />
           </div>
-          
-          <div className="mt-12 flex justify-center items-center gap-4">
-            <div className="flex items-center">
-              <ThumbsUp className="h-5 w-5 text-heat-600 mr-2" />
-              <span className="text-sm font-medium">97% of users recommend our service</span>
-            </div>
-            <div className="h-4 w-px bg-border mx-2" />
-            <div className="flex items-center">
-              <CheckCircle2 className="h-5 w-5 text-heat-600 mr-2" />
-              <span className="text-sm font-medium">5-star rated matching service</span>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Quote Form CTA Section */}
-      <section id="quote-form" className="section-container bg-heat-100">
-        <div className="fade-in-section">
-          <SectionTitle 
-            preTitle="Get Started Today"
-            title="Get Free Quotes From Trusted Installers"
-            description="Fill in the form below to get matched with certified heat pump installers in your area."
-          />
-          
-          <QuoteForm />
-        </div>
-      </section>
-
-      {/* FAQ Section */}
+      {/* FAQ Section - Keep this as it's valuable */}
       <FAQSection />
-
-      {/* About Us Section */}
-      <section id="about" className="section-container bg-white">
-        <div className="fade-in-section">
-          <SectionTitle 
-            preTitle="Our Service"
-            title="About Our Matching Service"
-            description="We're dedicated to connecting homeowners with the best heat pump installers across the UK."
-          />
-          
-          <div className="glass-card p-8 max-w-3xl mx-auto">
-            <p className="mb-4">
-              Our free matching service was created to help homeowners easily find and compare quotes from certified heat pump installers. We understand that transitioning to a new heating system is a significant investment, which is why we carefully vet all installers in our network.
-            </p>
-            <p className="mb-4">
-              We believe that air source heat pumps represent the future of home heating – offering significant cost savings while reducing environmental impact. Our mission is to make this technology accessible to everyone by connecting them with qualified professionals.
-            </p>
-            <p>
-              Our service is completely free to use, with no obligation to proceed with any quotes you receive. We're here to simplify your journey to more efficient, sustainable home heating.
-            </p>
-          </div>
-          
-          <div className="mt-12 flex flex-col md:flex-row gap-8 items-center justify-center">
-            <div className="flex items-center gap-2">
-              <Shield className="h-5 w-5 text-heat-600" />
-              <span className="font-medium">MCS Certified Installers</span>
-            </div>
-            <div className="h-4 w-px bg-border hidden md:block" />
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-5 w-5 text-heat-600" />
-              <span className="font-medium">No-Obligation Quotes</span>
-            </div>
-            <div className="h-4 w-px bg-border hidden md:block" />
-            <div className="flex items-center gap-2">
-              <ThumbsUp className="h-5 w-5 text-heat-600" />
-              <span className="font-medium">100% Free Service</span>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Final CTA Section */}
       <section className="section-container bg-heat-600 text-white">
         <div className="fade-in-section">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Find Your Perfect Heat Pump Installer?</h2>
-            <p className="text-xl mb-8 text-heat-100">Get your free quotes today and join thousands of satisfied homeowners who've found their ideal installer through our service.</p>
+            <p className="text-xl mb-8 text-heat-100">Get your free quotes today and join thousands of satisfied homeowners.</p>
             <CTAButton 
-              href="#quote-form"
+              href="#"
               size="lg"
               className="bg-white text-heat-700 hover:bg-heat-100"
+              onClick={() => {
+                window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth'
+                });
+              }}
             >
               Get Free Quotes Now
             </CTAButton>
@@ -376,10 +108,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-heat-800 text-heat-200 py-12">
+      {/* Footer - Simplified */}
+      <footer className="bg-heat-800 text-heat-200 py-8">
         <div className="section-container">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-xl font-semibold text-white mb-4">Heat Pump Quotes</h3>
               <p className="text-sm mb-4">Connecting homeowners with trusted heat pump installers across the UK.</p>
@@ -409,11 +141,10 @@ const Index = () => {
               <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm">
                 <li><a href="#" className="hover:text-white transition-colors animated-underline">Home</a></li>
-                <li><a href="#benefits" className="hover:text-white transition-colors animated-underline">Benefits</a></li>
-                <li><a href="#why-us" className="hover:text-white transition-colors animated-underline">Why Use Us</a></li>
-                <li><a href="#quote-form" className="hover:text-white transition-colors animated-underline">Get Quotes</a></li>
-                <li><a href="#about" className="hover:text-white transition-colors animated-underline">About Us</a></li>
+                <li><a href="#testimonials" className="hover:text-white transition-colors animated-underline">Testimonials</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors animated-underline">FAQs</a></li>
+                <li><a href="#" className="hover:text-white transition-colors animated-underline">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors animated-underline">Terms of Service</a></li>
               </ul>
             </div>
             
@@ -432,23 +163,22 @@ const Index = () => {
                   </svg>
                   <span>0800 123 4567</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <svg className="h-5 w-5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span>123 Energy Street, London, UK</span>
-                </li>
               </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Legal</h3>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors animated-underline">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors animated-underline">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition-colors animated-underline">Cookie Policy</a></li>
-              </ul>
+              
+              <div className="mt-6 flex flex-col md:flex-row gap-4 items-start">
+                <div className="flex items-center gap-2">
+                  <Shield className="h-5 w-5 text-heat-600" />
+                  <span className="text-xs">Vetted Installers</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-5 w-5 text-heat-600" />
+                  <span className="text-xs">No-Obligation</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ThumbsUp className="h-5 w-5 text-heat-600" />
+                  <span className="text-xs">Free Service</span>
+                </div>
+              </div>
             </div>
           </div>
           

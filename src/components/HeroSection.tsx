@@ -1,55 +1,43 @@
+
 import { FC } from 'react';
-import CTAButton from './CTAButton';
+import QuoteForm from './QuoteForm';
 
 const HeroSection: FC = () => {
   return (
-    <section className="relative w-full overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24">
+    <section className="relative w-full overflow-hidden pt-16 pb-16 md:pb-24">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-heat-100 to-heat-200" />
       
       {/* Content container */}
-      <div className="relative section-container">
-        <div className="flex flex-col items-center justify-center text-center">
+      <div className="relative section-container grid md:grid-cols-2 gap-8 items-center">
+        <div className="order-2 md:order-1">
           <div className="inline-block px-3 py-1 mb-4 text-xs font-medium tracking-wider text-heat-700 uppercase bg-heat-200 rounded-full animate-fade-in">
-            Compare quotes from trusted installers
+            Free quotes from trusted installers
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 max-w-4xl mx-auto animate-fade-in">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 animate-fade-in">
             Find The Perfect Heat Pump Installer For Your Home
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in-up">
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in-up">
             We connect you with certified local installers who offer competitive quotes on energy-efficient heat pump systems.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in-up">
-            <CTAButton href="#quote-form" size="lg">
-              Get Free Quotes
-            </CTAButton>
-            <CTAButton href="#how-it-works" variant="outline" size="lg" icon={false}>
-              Learn How It Works
-            </CTAButton>
-          </div>
-          
           {/* Trust badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center w-full max-w-3xl mx-auto opacity-70 animate-fade-in-up">
-            <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-heat-800">300+</div>
-              <div className="text-sm text-muted-foreground">Certified Installers</div>
+          <div className="grid grid-cols-2 gap-4 items-center opacity-70 animate-fade-in-up">
+            <div className="flex items-center gap-2">
+              <div className="text-xl font-bold text-heat-800">300+</div>
+              <div className="text-sm text-muted-foreground">Installers</div>
             </div>
-            <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-heat-800">5,000+</div>
-              <div className="text-sm text-muted-foreground">Matches Made</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-heat-800">4.9/5</div>
-              <div className="text-sm text-muted-foreground">Customer Rating</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-heat-800">Free</div>
-              <div className="text-sm text-muted-foreground">No-Obligation Quotes</div>
+            <div className="flex items-center gap-2">
+              <div className="text-xl font-bold text-heat-800">Free</div>
+              <div className="text-sm text-muted-foreground">No-Obligation</div>
             </div>
           </div>
+        </div>
+        
+        <div className="order-1 md:order-2">
+          <QuoteForm />
         </div>
       </div>
       
