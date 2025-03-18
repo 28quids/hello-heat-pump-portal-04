@@ -1,8 +1,11 @@
 
 import { FC } from 'react';
 import QuoteForm from './QuoteForm';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroSection: FC = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <section className="relative w-full overflow-hidden pt-16 pb-16 md:pb-24">
       {/* Background gradient */}
@@ -10,7 +13,8 @@ const HeroSection: FC = () => {
       
       {/* Content container */}
       <div className="relative section-container grid md:grid-cols-2 gap-8 items-center">
-        <div className="order-2 md:order-1">
+        {/* On mobile: headline first, then form */}
+        <div className={`${isMobile ? 'order-1' : 'order-2 md:order-1'}`}>
           <div className="inline-block px-3 py-1 mb-4 text-xs font-medium tracking-wider text-heat-700 uppercase bg-heat-200 rounded-full animate-fade-in">
             Free quotes from trusted installers
           </div>
@@ -36,7 +40,7 @@ const HeroSection: FC = () => {
           </div>
         </div>
         
-        <div className="order-1 md:order-2">
+        <div className={`${isMobile ? 'order-2' : 'order-1 md:order-2'}`}>
           <QuoteForm />
         </div>
       </div>
