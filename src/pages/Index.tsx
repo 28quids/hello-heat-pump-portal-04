@@ -56,8 +56,8 @@ const Index = () => {
       <MythsVsReality />
       
       {/* CTA after Myths vs Reality */}
-      <div className="py-10 bg-heat-50">
-        <div className="section-container text-center">
+      <div className="py-6 md:py-10 bg-heat-50">
+        <div className="section-container text-center !py-4 md:!py-0">
           <h3 className="text-xl md:text-2xl font-semibold mb-4">Ready to find your perfect installer?</h3>
           <CTAButton 
             onClick={scrollToTop}
@@ -103,8 +103,8 @@ const Index = () => {
       </section>
 
       {/* CTA after Testimonials */}
-      <div className="py-10 bg-heat-50">
-        <div className="section-container text-center">
+      <div className="py-6 md:py-10 bg-heat-50">
+        <div className="section-container text-center !py-4 md:!py-0">
           <h3 className="text-xl md:text-2xl font-semibold mb-4">Join these satisfied homeowners today</h3>
           <CTAButton 
             onClick={scrollToTop}
@@ -119,8 +119,8 @@ const Index = () => {
       <FAQSection />
 
       {/* CTA after FAQ Section */}
-      <div className="py-10 bg-heat-50">
-        <div className="section-container text-center">
+      <div className="py-6 md:py-10 bg-heat-50">
+        <div className="section-container text-center !py-4 md:!py-0">
           <h3 className="text-xl md:text-2xl font-semibold mb-4">Got more questions?</h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">Our installer network can answer all your questions and provide personalized advice for your home.</p>
           <CTAButton 
@@ -154,7 +154,7 @@ const Index = () => {
         <div className="section-container">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-xl font-semibold text-white mb-4">Heat Pump Quotes</h3>
+              <h3 className="text-xl font-semibold text-white mb-4">Green Home Path</h3>
               <p className="text-sm mb-4">Connecting homeowners with trusted heat pump installers across the UK.</p>
               <div className="flex space-x-4">
                 <a href="#" className="text-heat-200 hover:text-white transition-colors">
@@ -196,13 +196,7 @@ const Index = () => {
                   <svg className="h-5 w-5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <span>info@heatpumpquotes.com</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg className="h-5 w-5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <span>0800 123 4567</span>
+                  <span>info@greenhomepath.com</span>
                 </li>
               </ul>
               
