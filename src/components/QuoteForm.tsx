@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "@/components/ui/use-toast";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const QuoteForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -166,7 +167,7 @@ const QuoteForm = () => {
           </Button>
           
           <p className="text-xs text-center text-muted-foreground">
-            By submitting this form, you agree to our <a href="#" className="underline hover:text-heat-600">Privacy Policy</a> and <a href="#" className="underline hover:text-heat-600">Terms of Service</a>.
+            By submitting this form, you agree to our <Link to="/privacy" className="underline hover:text-heat-600">Privacy Policy</Link> and <Link to="/terms" className="underline hover:text-heat-600">Terms of Service</Link>.
           </p>
         </form>
       ) : (
