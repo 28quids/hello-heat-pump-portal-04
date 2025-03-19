@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           <div className="mb-4 md:mb-0">
             <Link to="/" className="flex items-center">
               <img 
-                src="/images/GREEN HOME PATH (1).svg" 
+                src="/images/GREEN HOME PATH.svg" 
                 alt="Green Home Path Logo" 
                 className="h-10 w-auto invert"
               />
