@@ -28,11 +28,11 @@ const HeroSection: FC = () => {
           </div>
           
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 animate-fade-in">
-          Find The Perfect Heat Pump Installer For Your Home
+          Heat Pump Quotes Made Simple - Save on Energy Bills Today
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in-up">
-            We connect you with certified local installers who offer competitive quotes on energy-efficient heat pump systems.
+            Fast, no-obligation quotes from Trusted Installers. Government Grants Available.
           </p>
           
           {/* Trust badges */}
