@@ -1,4 +1,7 @@
+
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import SectionTitle from '@/components/SectionTitle';
 import CTAButton from '@/components/CTAButton';
@@ -46,11 +49,23 @@ const Index = () => {
       behavior: 'smooth'
     });
   };
+  
+  const scrollToForm = () => {
+    const formElement = document.getElementById('quote-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
+      {/* Header */}
+      <Header />
+      
       {/* Hero Section with Form */}
-      <HeroSection />
+      <div className="pt-16">
+        <HeroSection />
+      </div>
 
       {/* Myths vs Reality Section */}
       <MythsVsReality />
@@ -60,7 +75,7 @@ const Index = () => {
         <div className="section-container text-center !py-4 md:!py-0">
           <h3 className="text-xl md:text-2xl font-semibold mb-4">Ready to find your perfect installer?</h3>
           <CTAButton 
-            onClick={scrollToTop}
+            onClick={scrollToForm}
             className="bg-heat-600 text-white hover:bg-heat-700"
           >
             Get Your Free Quotes Now
@@ -107,7 +122,7 @@ const Index = () => {
         <div className="section-container text-center !py-4 md:!py-0">
           <h3 className="text-xl md:text-2xl font-semibold mb-4">Join these satisfied homeowners today</h3>
           <CTAButton 
-            onClick={scrollToTop}
+            onClick={scrollToForm}
             className="bg-heat-600 text-white hover:bg-heat-700"
           >
             Get Free Heat Pump Quotes
@@ -124,7 +139,7 @@ const Index = () => {
           <h3 className="text-xl md:text-2xl font-semibold mb-4">Got more questions?</h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">Our installer network can answer all your questions and provide personalized advice for your home.</p>
           <CTAButton 
-            onClick={scrollToTop}
+            onClick={scrollToForm}
             className="bg-heat-600 text-white hover:bg-heat-700"
           >
             Connect With Installers Now
@@ -139,7 +154,7 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Find Your Perfect Heat Pump Installer?</h2>
             <p className="text-xl mb-8 text-heat-100">Get your free quotes today and join thousands of satisfied homeowners.</p>
             <CTAButton 
-              onClick={scrollToTop}
+              onClick={scrollToForm}
               size="lg"
               className="bg-white text-heat-700 hover:bg-heat-100"
             >
@@ -181,11 +196,11 @@ const Index = () => {
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors animated-underline">Home</a></li>
-                <li><a href="#testimonials" className="hover:text-white transition-colors animated-underline">Testimonials</a></li>
-                <li><a href="#faq" className="hover:text-white transition-colors animated-underline">FAQs</a></li>
-                <li><a href="#" className="hover:text-white transition-colors animated-underline">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors animated-underline">Terms of Service</a></li>
+                <li><Link to="/" className="hover:text-white transition-colors animated-underline">Home</Link></li>
+                <li><Link to="#testimonials" className="hover:text-white transition-colors animated-underline">Testimonials</Link></li>
+                <li><Link to="#faq" className="hover:text-white transition-colors animated-underline">FAQs</Link></li>
+                <li><Link to="/terms-of-service" className="hover:text-white transition-colors animated-underline">Terms of Service</Link></li>
+                <li><Link to="/privacy-policy" className="hover:text-white transition-colors animated-underline">Privacy Policy</Link></li>
               </ul>
             </div>
             
