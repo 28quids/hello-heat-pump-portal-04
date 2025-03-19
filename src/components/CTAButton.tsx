@@ -29,6 +29,21 @@ const CTAButton: React.FC<CTAButtonProps> = ({
     </>
   );
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const element = document.getElementById('quote-form');
+    if (element) {
+      const headerOffset = 80; // Adjust this value based on your header height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   if (onClick) {
     return (
       <Button
@@ -43,7 +58,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({
   }
 
   return (
-    <a href={href}>
+    <a href={href} onClick={handleClick}>
       <Button
         variant={variant}
         size={size}
