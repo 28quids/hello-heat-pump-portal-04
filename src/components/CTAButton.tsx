@@ -33,7 +33,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({
     e.preventDefault();
     const element = document.getElementById('quote-form');
     if (element) {
-      const headerOffset = 80; // Adjust this value based on your header height
+      const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
