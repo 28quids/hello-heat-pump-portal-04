@@ -10,9 +10,9 @@ export function Header() {
             <img src="/images/favicon-96x96.png" alt="Green Home Path Logo" className="h-8 w-8" />
             <span className="font-bold text-xl">Green Home Path</span>
           </Link>
-          <Link to="/quote">
+          <a href="#quote-form">
             <Button>Get Free Quote</Button>
-          </Link>
+          </a>
         </div>
       </div>
     </header>

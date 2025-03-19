@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -17,7 +16,7 @@ interface CTAButtonProps {
 const CTAButton: React.FC<CTAButtonProps> = ({
   children,
   onClick,
-  href,
+  href = '#quote-form',
   variant = 'default',
   size = 'default',
   className,
@@ -30,34 +29,29 @@ const CTAButton: React.FC<CTAButtonProps> = ({
     </>
   );
 
-  const buttonClasses = cn(
-    'transition-all duration-300 font-medium shadow-soft hover:shadow-glow',
-    variant === 'default' && 'bg-heat-600 hover:bg-heat-700',
-    className
-  );
-
-  if (href) {
+  if (onClick) {
     return (
-      <Button 
-        variant={variant} 
-        size={size} 
-        className={buttonClasses} 
-        asChild
+      <Button
+        onClick={onClick}
+        variant={variant}
+        size={size}
+        className={cn("group", className)}
       >
-        <a href={href}>{buttonContent}</a>
+        {buttonContent}
       </Button>
     );
   }
 
   return (
-    <Button 
-      variant={variant} 
-      size={size} 
-      onClick={onClick} 
-      className={buttonClasses}
-    >
-      {buttonContent}
-    </Button>
+    <a href={href}>
+      <Button
+        variant={variant}
+        size={size}
+        className={cn("group", className)}
+      >
+        {buttonContent}
+      </Button>
+    </a>
   );
 };
 

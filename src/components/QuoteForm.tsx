@@ -66,7 +66,7 @@ const QuoteForm = () => {
   };
   
   return (
-    <div className="glass-card p-6 md:p-8 w-full max-w-md mx-auto">
+    <div id="quote-form" className="glass-card p-6 md:p-8 w-full max-w-md mx-auto">
       {formStep === 1 ? (
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
