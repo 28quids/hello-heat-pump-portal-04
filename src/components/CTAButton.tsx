@@ -30,12 +30,15 @@ const CTAButton: React.FC<CTAButtonProps> = ({
   );
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const element = document.getElementById('quote-form');
-    if (element) {
-      const yOffset = -80; // Offset for header
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+    // Only prevent default for quote form link
+    if (href === '#quote-form') {
+      e.preventDefault();
+      const element = document.getElementById('quote-form');
+      if (element) {
+        const yOffset = -80; // Offset for header
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
     }
   };
 
