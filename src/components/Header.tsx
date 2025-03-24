@@ -16,7 +16,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
             <img src="/images/favicon-96x96.png" alt="Green Home Path Logo" className="h-8 w-8" />
-            <span className="font-bold text-xl">Green Home Path</span>
+            <span className="font-bold text-xl">GreenHomePath</span>
           </Link>
           <a href="#quote-form" onClick={handleQuoteClick}>
             <Button>Get Free Quote</Button>
