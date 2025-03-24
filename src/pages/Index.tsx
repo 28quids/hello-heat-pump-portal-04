@@ -5,6 +5,7 @@ import CTAButton from '@/components/CTAButton';
 import TestimonialCard from '@/components/TestimonialCard';
 import FAQSection from '@/components/FAQSection';
 import MythsVsReality from '@/components/MythsVsReality';
+import { Link } from 'react-router-dom';
 import { 
   Shield,
   CheckCircle2, 
@@ -181,11 +182,11 @@ const Index = () => {
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors animated-underline">Home</a></li>
+                <li><Link to="/" className="hover:text-white transition-colors animated-underline">Home</Link></li>
                 <li><a href="#testimonials" className="hover:text-white transition-colors animated-underline">Testimonials</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors animated-underline">FAQs</a></li>
-                <li><a href="#privacy" className="hover:text-white transition-colors animated-underline">Privacy Policy</a></li>
-                <li><a href="#terms" className="hover:text-white transition-colors animated-underline">Terms of Service</a></li>
+                <li><Link to="/privacy" className="hover:text-white transition-colors animated-underline">Privacy Policy</Link></li>
+                <li><Link to="/terms" className="hover:text-white transition-colors animated-underline">Terms of Service</Link></li>
               </ul>
             </div>
             
